@@ -17,14 +17,15 @@ Entrega_GuiaPractica4/
 │   ├── GrafoVuelos.cs
 │   ├── CargadorVuelos.cs
 │   └── MenuVuelos.cs
-├── base/                    # Proyecto, datos y documentación
+├── base/                    # Proyecto, datos
 │   ├── GuiaPractica4.csproj
-│   ├── README.md
-│   ├── ANALISIS.md
 │   └── Datos/
 │       └── vuelos.txt
 ├── compilado/               # Aplicación compilada para Windows x64
 │   ├── GuiaPractica4.exe
+│   ├── GuiaPractica4.dll
+│   ├── GuiaPractica4.deps.json
+│   ├── GuiaPractica4.runtimeconfig.json
 │   └── Datos/
 │       └── vuelos.txt
 └── .gitignore
@@ -39,7 +40,13 @@ dotnet build .\base\GuiaPractica4.csproj
 dotnet run --project .\base\GuiaPractica4.csproj
 ```
 
-También puedes abrir `compilado/GuiaPractica4.exe`. Conserva `compilado/Datos` junto al ejecutable para que cargue el archivo de vuelos.
+Para volver a generar la versión ligera, ejecuta desde esta misma carpeta:
+
+```powershell
+dotnet publish .\base\GuiaPractica4.csproj -c Release -r win-x64 -p:SelfContained=false -p:PublishSingleFile=false -o .\compilado
+```
+
+La aplicación compilada ocupa menos espacio porque no incluye el runtime. Para abrir `compilado/GuiaPractica4.exe` se requiere tener instalado el **.NET 10 Runtime para Windows x64**. Mantén juntos el `.exe`, la `.dll`, los archivos `.json` y la carpeta `Datos`; no se puede ejecutar el `.exe` aislado.
 
 ## Funcionalidades
 
@@ -54,11 +61,5 @@ Los vuelos y precios en dólares son ficticios y se almacenan en `base/Datos/vue
 
 ## Agente de IA utilizado
 
-- **Agente:** GitHub Copilot.
-- **Porcentaje aproximado de código desarrollado con ayuda de IA:** 90 % (generación inicial, organización, modificaciones y validaciones). Ajusta este porcentaje según el código que revises, comprendas y modifiques antes de entregar.
-
-## Repositorio
-
-Pendiente de publicar. Añade aquí el enlace cuando el repositorio esté disponible.
-
-Para el análisis del grafo, el algoritmo, la complejidad y los resultados de prueba, consulta `ANALISIS.md`.
+-**Agente**: GitHub Copilot
+- **Porcentaje de código**: 20% (revisión y ayuda en compilación del proyecto)
