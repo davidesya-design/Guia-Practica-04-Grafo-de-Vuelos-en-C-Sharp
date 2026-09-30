@@ -1,0 +1,27 @@
+# Origen;Destino;Precio
+Quito;Lima;150
+Quito;Bogota;180
+Quito;Panama;220
+Lima;Santiago;110
+Lima;Bogota;90
+Lima;Buenos Aires;300
+Bogota;Santiago;280
+Santiago;Buenos Aires;120
+Panama;Bogota;130
+Panama;Buenos Aires;250
+Quito;Guayaquil;95
+Guayaquil;Quito;110
+Guayaquil;Lima;145
+Guayaquil;Cuenca;80
+Cuenca;Quito;75
+Cuenca;Lima;190
+Bogota;Medellin;65
+Medellin;Panama;140
+Panama;Miami;210
+Miami;Nueva York;180
+Nueva York;Buenos Aires;600
+Lima;Sao Paulo;260
+Santiago;Sao Paulo;310
+Sao Paulo;Buenos Aires;150
+Buenos Aires;Montevideo;90
+Montevideo;Buenos Aires;85
